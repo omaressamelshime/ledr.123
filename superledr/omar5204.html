@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة الادمن الخاصة ب عمر محمد</title>
-    <link rel="icon" href="hi/img.jpg" type="image/png">
+    <title>صفحة الادمن</title>
+    <link rel="icon" href="logo.jpg" type="image/png">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -59,18 +59,40 @@
             transition: transform 0.3s ease;
         }
 
-        iframe {
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 500px;
-            border: none;
-            margin-top: 20px;
-            display: none; /* مخفي في البداية */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
 
-        .tile-info {
-            font-size: 16px;
-            text-align: center;
-            color: #333;
+        .popup iframe {
+            width: 90%;
+            height: 90%;
+            border: none;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff16de;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
 
         .footer {
@@ -91,32 +113,52 @@
 </head>
 <body>
 
-<h2 style="color: white;">صفحة روابط العمل</h2>
+<h2 style="color: white;">صفحة الادمن الخاصة بالسوبر ليدر عمر محمد</h2>
 
 <div class="container">
-    <div class="tile" onclick="openLink('https://example.com/contact')">
-        <img src="https://via.placeholder.com/80" alt="التواصل">
-        <h3>صفحة التواصل</h3>
+    <div class="tile" onclick="openLink('https://docs.google.com/spreadsheets/d/e/2PACX-1vTSKbMxyBeOZ50sH0GnlKOQlE4cx10xHD9hzfOa99gJ6Mk2pAs5BasM0_A-r7U-rpNqXqTLIRDUhR-3/pubhtml?gid=2035309856&single=true')">
+        <img src="montgat.jpg" alt="جميع منتجات الشركة">
+        <h3>جميع منتجات الشركة</h3>
     </div>
-
-    <div class="tile" onclick="openLink('https://example.com/youtube')">
-        <img src="https://via.placeholder.com/80" alt="فيديو يوتيوب">
-        <h3>فيديو يوتيوب</h3>
+    <div class="tile" onclick="openLink('https://forms.gle/cNT6Qrc3anq2LmRh7')">
+        <img src="appmontgat.jpg" alt="اضافة منتج للشركة">
+        <h3>اضافة منتج للشركة</h3>
     </div>
-
-    <div class="tile" onclick="openLink('https://example.com/reports')">
-        <img src="https://via.placeholder.com/80" alt="تقارير">
-        <h3>التقارير</h3>
+    <div class="tile" onclick="openLink('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0yDZiwU9cvtYFWnrHavDnm_wwGlT-REhcOIvNfiC0VHS9YiQVqgJwcYhW3jjaMuJDYfTkTrQ9GiR_/pubhtml?gid=1628753641&single=true')">
+        <img src="metem.jpg" alt="موظفيني">
+        <h3>موظفيني</h3>
     </div>
-
-    <div class="tile" onclick="openLink('https://example.com/tools')">
-        <img src="https://via.placeholder.com/80" alt="أدوات العمل">
-        <h3>أدوات العمل</h3>
+    <div class="tile" onclick="openLink('https://docs.google.com/spreadsheets/d/e/2PACX-1vQMtNsxLUq8CmPT_cbOH3nrwQsZYQJDiNJhhRKzX4pkuY4cX9z8m2ZQrVASp5dXvjwKTV304I0I0dkc/pubhtml?gid=892070956&single=true')">
+        <img src="order.jpg" alt="جميع اوردرات موظفييني">
+        <h3>جميع اوردرات موظفييني</h3>
     </div>
-
+    <div class="tile" onclick="openLink('https://forms.gle/hMmYChK2TGTm1bYw7')">
+        <img src="app1.jpg" alt="تسجيل موظف الي الشركه">
+        <h3>تسجيل موظف الي الشركه</h3>
+    </div>
+    <div class="tile" onclick="openLink('https://docs.google.com/spreadsheets/d/e/2PACX-1vRGbjJsiCbtPQ8hZEPS3By_a6pzffxv_YPhAMv37_QCRry-pqhGdSUiraA6QgMvzi9UOwSV5862RoMd/pubhtml?gid=1359755153&single=true')">
+        <img src="fkra.jpg" alt="اقتراحات المنتجات من الموظفين">
+        <h3>افكار منتجات جديدة من الموظفين</h3>
+    </div>
+    <div class="tile" onclick="openLink('https://docs.google.com/spreadsheets/d/e/2PACX-1vShV8E7dZn174n80RJJmog7hjj_6KFBqqS83-kKySh9_Q9xz4yN0zJkzvmAz3lVH50tVE8YriXetkKd/pubhtml?gid=1729712269&single=true')">
+        <img src="shkwa.jpg" alt="شكاوي الموظفين">
+        <h3>شكاوي الموظفين</h3>
+    </div>
+<div class="tile">
+    <img src="twzef.jpg" alt="نسخ الرابط">
+    <h3>رابط التوظيف الخاص بك</h3>
+    <div style="text-align: center; margin-top: 10px;">
+        <button onclick="copyLink()" style="padding: 10px 20px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            نسخ الرابط
+        </button>
+    </div>
+</div>
 </div>
 
-<iframe id="iframe"></iframe>
+<div class="popup" id="popup">
+    <button class="close-btn" onclick="closePopup()">&times;</button>
+    <iframe id="iframe"></iframe>
+</div>
 
 <div class="footer">
     &copy; 2025 جميع الحقوق محفوظة - <a href="https://www.facebook.com/omaressamelshemi/">OMAR EL-SHEMI</a>
@@ -124,9 +166,26 @@
 
 <script>
     function openLink(url) {
+        const popup = document.getElementById('popup');
         const iframe = document.getElementById('iframe');
-        iframe.style.display = 'block';
+        popup.style.display = 'flex';
         iframe.src = url;
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('popup');
+        const iframe = document.getElementById('iframe');
+        popup.style.display = 'none';
+        iframe.src = '';
+    }
+    const linkToCopy = "https://forms.gle/ZJzxctgenBAu3Qft7";
+
+    function copyLink() {
+        navigator.clipboard.writeText(linkToCopy).then(() => {
+            alert("تم نسخ الرابط إلى الحافظة!");
+        }).catch(err => {
+            alert("حدث خطأ أثناء النسخ: " + err);
+        });
     }
 </script>
 
