@@ -144,6 +144,27 @@
         <img src="shkwa.jpg" alt="شكاوي الموظفين">
         <h3>شكاوي الموظفين</h3>
     </div>
+
+
+
+
+
+<div class="tile">
+    <img src="key.jpg" alt="فتح ادارة المتجر">
+    <h3>فتح ادارة المتجر</h3>
+    <div style="text-align: center; margin-top: 10px;">
+        <button onclick="openExternalLink('https://b3na.com/Login')" style="padding: 10px 20px; margin: 5px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            لوحة التحكم
+        </button>
+<button onclick="copyLink('اسم المستخدم : 1tard.shop@gmail.comكلمة المرور : @Tard2025')" style="padding: 10px 20px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            نسخ بيانات السجيل
+        </button>
+    </div>
+</div>
+
+
+
+
 <div class="tile">
     <img src="twzef.jpg" alt="نسخ الرابط">
     <h3>رابط التوظيف الخاص بك</h3>
@@ -178,14 +199,16 @@
         popup.style.display = 'none';
         iframe.src = '';
     }
-    const linkToCopy = "https://forms.gle/ZJzxctgenBAu3Qft7";
-
-    function copyLink() {
-        navigator.clipboard.writeText(linkToCopy).then(() => {
+    function copyLink(link) {
+        navigator.clipboard.writeText(link).then(() => {
             alert("تم نسخ الرابط إلى الحافظة!");
         }).catch(err => {
             alert("حدث خطأ أثناء النسخ: " + err);
         });
+    }
+
+    function openExternalLink(link) {
+        window.open(link, "_blank");
     }
 </script>
 
