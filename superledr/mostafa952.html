@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحة الادمن</title>
-    <link rel="icon" href="twzef.jpg" type="image/png">
+    <link rel="icon" href="logo.jpg" type="image/png">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -115,12 +115,19 @@
 
 <h2 style="color: white;">صفحة الادمن الخاصة بالسوبر ليدر مصطفي</h2>
 
+
+
+
+
+
+
+
 <div class="container">
     <div class="tile" onclick="openLink('https://docs.google.com/spreadsheets/d/e/2PACX-1vTSKbMxyBeOZ50sH0GnlKOQlE4cx10xHD9hzfOa99gJ6Mk2pAs5BasM0_A-r7U-rpNqXqTLIRDUhR-3/pubhtml?gid=2035309856&single=true')">
         <img src="montgat.jpg" alt="جميع منتجات الشركة">
         <h3>جميع منتجات الشركة</h3>
     </div>
-    <div class="tile" onclick="openLink('https://forms.gle/cNT6Qrc3anq2LmRh7')">
+    <div class="tile" onclick="openExternalLink('https://forms.gle/cNT6Qrc3anq2LmRh7')">
         <img src="appmontgat.jpg" alt="اضافة منتج للشركة">
         <h3>اضافة منتج للشركة</h3>
     </div>
@@ -144,14 +151,40 @@
         <img src="shkwa.jpg" alt="شكاوي الموظفين">
         <h3>شكاوي الموظفين</h3>
     </div>
+
+
 <div class="tile">
-    <img src="twzef.jpg" alt="نسخ الرابط">
-    <h3>رابط التوظيف الخاص بك</h3>
+    <img src="key.jpg" alt="فتح ادارة المتجر">
+    <h3>فتح ادارة المتجر</h3>
     <div style="text-align: center; margin-top: 10px;">
-        <button onclick="copyLink()" style="padding: 10px 20px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-            نسخ الرابط
+        <button onclick="openExternalLink('https://b3na.com/Login')" style="padding: 10px 20px; margin: 5px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            لوحة التحكم
+        </button>
+<button onclick="copyLink('اسم المستخدم : 1tard.shop@gmail.comكلمة المرور : @Tard2025')" style="padding: 10px 20px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            نسخ بيانات السجيل
         </button>
     </div>
+</div>
+
+
+
+
+
+<div class="tile">
+    <img src="twzef.jpg" alt="نسخ رابط التوظيف">
+    <h3>نسخ رابط التوظيف</h3>
+    <div style="text-align: center; margin-top: 10px;">
+        <button onclick="copyLink('https://forms.gle/Jv5NwZC2P7iHb1KcA')" style="padding: 10px 20px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            نسخ الرابط
+        </button>
+       
+    </div>
+</div>
+
+
+
+
+
 </div>
 </div>
 
@@ -178,14 +211,16 @@
         popup.style.display = 'none';
         iframe.src = '';
     }
-    const linkToCopy = "https://forms.gle/Jv5NwZC2P7iHb1KcA";
-
-    function copyLink() {
-        navigator.clipboard.writeText(linkToCopy).then(() => {
+    function copyLink(link) {
+        navigator.clipboard.writeText(link).then(() => {
             alert("تم نسخ الرابط إلى الحافظة!");
         }).catch(err => {
             alert("حدث خطأ أثناء النسخ: " + err);
         });
+    }
+
+    function openExternalLink(link) {
+        window.open(link, "_blank");
     }
 </script>
 
