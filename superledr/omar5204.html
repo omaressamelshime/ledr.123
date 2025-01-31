@@ -120,7 +120,7 @@
         <img src="montgat.jpg" alt="جميع منتجات الشركة">
         <h3>جميع منتجات الشركة</h3>
     </div>
-    <div class="tile" onclick="openExternalLink('https://forms.gle/cNT6Qrc3anq2LmRh7')">
+    <div class="tile" onclick="openLink('https://forms.gle/cNT6Qrc3anq2LmRh7')">
         <img src="appmontgat.jpg" alt="اضافة منتج للشركة">
         <h3>اضافة منتج للشركة</h3>
     </div>
@@ -165,17 +165,26 @@
 
 
 
+
 <div class="tile">
-    <img src="twzef.jpg" alt="نسخ الرابط">
-    <h3>رابط التوظيف الخاص بك</h3>
+    <img src="twzef.jpg" alt="نسخ رابط التوظيف">
+    <h3>نسخ رابط التوظيف</h3>
     <div style="text-align: center; margin-top: 10px;">
-        <button onclick="copyLink(https://forms.gle/ZJzxctgenBAu3Qft7)" style="padding: 10px 20px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <button onclick="copyLink('https://forms.gle/ZJzxctgenBAu3Qft7')" style="padding: 10px 20px; margin: 5px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
             نسخ الرابط
         </button>
+       
     </div>
+</div>
+
+
+
+
+
 </div>
 </div>
 
+</div>
 <div class="popup" id="popup">
     <button class="close-btn" onclick="closePopup()">&times;</button>
     <iframe id="iframe"></iframe>
@@ -187,6 +196,7 @@
         OMAR EL-SHEMI
     </a>
 </div>
+
 
 
 <script>
